@@ -48,9 +48,7 @@ passiveIncome()
 // event listeners //
 clickBtnHTML.addEventListener('click', function(){
     balance = balance + formula
-    localStorage.setItem('balance', balance)
-    localStorage.setItem('passive', passive)
-    localStorage.setItem('formula', formula)
+    saveData()
     clickHandler()
     
 })
@@ -90,6 +88,7 @@ function showUpgrades () {
                 clearInfo()
                 showInfo()
                 saveUpgrades()
+                saveData()
             }
         })
 
@@ -110,6 +109,7 @@ function passiveIncome () {
             console.log('added passive income!')
             clearInfo()
             showInfo()
+            saveData()
         }
     }, 1000 )
 }
@@ -160,4 +160,10 @@ function getUpgrades () {
         upgrades.Costume.displayLevel = savedUpgrades.Costume.displayLevel;
         upgrades.Costume.displayPrice = savedUpgrades.Costume.displayPrice;
     }
+}
+
+function saveData () {
+    localStorage.setItem('balance', balance)
+    localStorage.setItem('passive', passive)
+    localStorage.setItem('formula', formula)
 }
