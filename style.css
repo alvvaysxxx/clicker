@@ -1,0 +1,22 @@
+.container1{
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+.container2{
+    margin-top: 45px;
+    padding-left: 15px;
+}
+
+
+.sample-text{
+    text-align: center;
+}
+
+.clickBtn{
+    display: block;
+    width: 50%;
+    margin: auto;
+    margin-top: 30px;
+    height: 55px;
+}
