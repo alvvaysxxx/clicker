@@ -8,11 +8,11 @@ upgradesListHTML = document.querySelector('.upgrades-list')
 perSecHTML = document.querySelector('.perSec')
 infoHTML = document.querySelector('.info')
 
-balance = 0
-formula = 1
-passive = 0
+let balance = parseFloat(localStorage.getItem('balance')) || 0;
+let formula = parseFloat(localStorage.getItem('formula')) || 1;
+let passive = parseFloat(localStorage.getItem('passive')) || 0;
 
-const upgrades = {
+upgrades = {
     Shestyorki: {
         displayName: 'Нанять шестёрок',
         displayPrice: 100,
@@ -36,6 +36,10 @@ const upgrades = {
         }
     }
 }
+
+showUpgrades()
+
+
 // functions //
 showUpgrades()
 passiveIncome()
@@ -43,6 +47,9 @@ passiveIncome()
 // event listeners //
 clickBtnHTML.addEventListener('click', function(){
     balance = balance + formula
+    localStorage.setItem('balance', balance)
+    localStorage.setItem('passive', passive)
+    localStorage.setItem('formula', formula)
     clickHandler()
     
 })
@@ -80,7 +87,8 @@ function showUpgrades () {
                 upgrades[upgrade].buff()
                 showUpgrades()
                 clearInfo()
-                showInfo() 
+                showInfo()
+                saveUpgrades()
             }
         })
 
@@ -128,4 +136,27 @@ function showInfo () {
     infoHTML.append(balanceHTML)
     infoHTML.append(perClickHTML)
     infoHTML.append(perSecHTML)
+}
+
+function saveUpgrades () {
+    localStorage.setItem('upgrades', JSON.stringify({
+        Shestyorki: {
+          displayLevel: upgrades.Shestyorki.displayLevel,
+          displayPrice: upgrades.Shestyorki.displayPrice
+        },
+        Costume: {
+          displayLevel: upgrades.Costume.displayLevel,
+          displayPrice: upgrades.Costume.displayPrice
+        }
+    }))
+}
+
+function getUpgrades () {
+    const savedUpgrades = JSON.parse(localStorage.getItem('upgrades'));
+    if (savedUpgrades) {
+        upgrades.Shestyorki.displayLevel = savedUpgrades.Shestyorki.displayLevel;
+        upgrades.Shestyorki.displayPrice = savedUpgrades.Shestyorki.displayPrice;
+        upgrades.Costume.displayLevel = savedUpgrades.Costume.displayLevel;
+        upgrades.Costume.displayPrice = savedUpgrades.Costume.displayPrice;
+    }
 }
