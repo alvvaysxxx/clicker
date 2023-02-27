@@ -37,10 +37,11 @@ upgrades = {
     }
 }
 
-showUpgrades()
-
-
 // functions //
+clearInfo()
+showInfo()
+clearUpgrades()
+getUpgrades()
 showUpgrades()
 passiveIncome()
 
