@@ -23,7 +23,7 @@ upgrades = {
         buff: function () {
             this.displayLevel = this.displayLevel + 1
             passive = passive + 0.5
-            this.displayPrice = this.displayPrice * 2
+            this.displayPrice = this.displayPrice * 1.5
         }
     },
     Costume: {
