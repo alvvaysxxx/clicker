@@ -32,8 +32,19 @@ upgrades = {
         buff: function () {
             this.displayLevel = this.displayLevel + 1
             formula = formula * 1.5
-            this.displayPrice = this.displayPrice * 3
+            this.displayPrice = this.displayPrice * 2
         }
+    },
+    Mining: {
+      displayName: "Купить майнинг ферму",
+      displayPrice: 5000,
+      displayDescription: "Приобретая майнинг ферму вы начинаете получать +5 $ в секунду",
+      displayLevel: 1,
+      buff: function() {
+        this.displayLevel = this.displayLevel + 1
+        passive = passive + 5
+        this.displayPrice = this.displayPrice * 3
+      }
     }
 }
 
