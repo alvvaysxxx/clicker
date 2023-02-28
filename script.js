@@ -7,6 +7,8 @@ perClickHTML = document.querySelector('.perClick')
 upgradesListHTML = document.querySelector('.upgrades-list')
 perSecHTML = document.querySelector('.perSec')
 infoHTML = document.querySelector('.info')
+darkHTML = document.querySelector(".darkSwitch")
+styleHTML = document.querySelector('.style')
 
 let balance = parseFloat(localStorage.getItem('balance')) || 0;
 let formula = parseFloat(localStorage.getItem('formula')) || 1;
@@ -64,6 +66,14 @@ clickBtnHTML.addEventListener('click', function(){
     
 })
 
+darkHTML.addEventListener('click', function() {
+    console.log(styleHTML.getAttribute('href'))
+    if (styleHTML.getAttribute('href') == 'darkStyle.css') {
+      styleHTML.setAttribute('href', 'style.css')
+    } else {
+      styleHTML.setAttribute('href', 'darkStyle.css')
+    }
+})
 
 // functions //
 function clickHandler () {

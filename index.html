@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" class = 'style'>
     <title>Document</title>
 </head>
 <body>
+   <nav class="navbar bg-body-tertiary">
+        <form class="container-fluid justify-content-start">
+            <button class="darkSwitch btn btn-outline-secondary me-2" type="button">Ночной режим</button>
+        </form>
+   </nav>
     <div class="container1">
         <p class = 'sample-text'>Ваш текущий баланс:</h2>
         <div class = 'info'>
@@ -17,7 +22,7 @@
             <p class="perClick sample-text">Ваша выручка за клик: 1 $</p>
             <p class="perSec sample-text">Ваша выручка в секунду: 0 $</p>
         </div>
-        <button class = 'btn btn-primary clickBtn'>💵</button>
+        <button class = 'btn-primary clickBtn'>💵</button>
     </div>
 
     <h3 class = 'sample-text'>Магазин улучшений</h3>

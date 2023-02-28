@@ -1,3 +1,11 @@
+body{
+  background-color: #1c1c1e;
+}
+
+h2, p, h1, h3, li{
+  color: white
+}
+
 .container1{
     margin-top: 45px;
     margin-bottom: 45px;
@@ -19,5 +27,10 @@
     margin: auto;
     margin-top: 30px;
     height: 55px;
-    border-radius: 5px
+    border-radius: 5px;
+}
+
+.btn {
+  background-color: white;
+  color: black;
 }
